@@ -175,15 +175,12 @@ var Voter =  React.createClass({
                     var checker = null;
                     if (i===leng){
                       checker = prompt("Please enter your option", listas[0].name);
-                      console.log(checker);
-                      
-
-                    }
+                     }
 
                     if (checker) {
                     listas.push({name: checker, votes:1});
                     voteUp["name"] =checker;
-                    voteUp['poll']= linksList[this.state.ind];
+                    voteUp['poll']= linksList[self.state.ind];
                     }
                     if (voteUp.name !== null){
                         $.get( "/vote", {old: voteUp, voter: self.state.user});
