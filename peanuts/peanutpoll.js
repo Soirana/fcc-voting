@@ -277,7 +277,7 @@ var Voter =  React.createClass({
           if (this.state.private && authorList[index]!== this.state.user){
             pollText += " invisible";
           }
-          console.log (this.state.user);
+          
           return <div>
                     <button className = {pollText} onClick ={()=> this.update(index)}>{listValue}</button>
                  </div>
