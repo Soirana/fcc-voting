@@ -41,19 +41,19 @@ app.use(express.static('peanuts'));
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/votecheck', function(request, response) {
-	if ( request.xhr) {
+	if (request.xhr) {
 		var potvoter = request.query.user;
 		if (!potvoter){
-			response.json(voter: false);
+			response.json({voter: false});
 		} else {
-		db.find({label: request.query.poll},function(err, docs) {
-			if (doc[0].voters.indexOf(potvoter) !==-1){
-				response.json(voter: false);
-			}else{
-				response.json(voter: true);
-			}
+			db.find({label: request.query.poll},function(err, docs) {
+				if (doc[0].voters.indexOf(potvoter) !==-1){
+					response.json({voter: false});
+				}else{
+					response.json({voter: true});
+				}
 
-		});
+			});
 		}
 	}else {
 		response.redirect('/');
@@ -142,7 +142,7 @@ app.get('/remove', function(request, response) {
 
 app.get('/vote', function(request, response) {
 	if ( request.xhr) {
-		var holder = request.query;
+		var holder = request.query.old;
 		db.find({label: request.query.poll},function(err, docs) {
 			var finder = docs[0].poll.slice();
 			
@@ -156,7 +156,9 @@ app.get('/vote', function(request, response) {
 				finder.push({name: holder.name, votes:1});
 			}
 
-			db.update({label: holder.poll}, { $set: {poll: finder}});	
+			db.update({label: holder.poll}, { $set: {poll: finder}});
+			db.update({label: holder.poll}, { $push: {voters: request.query.voter}});	
+			
 		});
 		response.writeHead(200, {'Content-Type': 'text/html'});
 		response.end();
