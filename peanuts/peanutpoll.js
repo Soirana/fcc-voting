@@ -199,7 +199,12 @@ var Voter =  React.createClass({
         userClass = "invisible",
         logText,
         privText,
-        privClass;
+        privClass,
+        removeClass = "";
+
+      if (this.state.author!== this.state.user){
+        removeClass = "invisible";
+      }
 
       if (this.state.private){
           privText = "All polls";
@@ -260,7 +265,7 @@ var Voter =  React.createClass({
         {creator}
         <button className = {userClass +" linker"} onClick ={this.handleFocus}>{privText}</button>
         <button className = {userClass +" linker"} onClick ={this.agregate}>My agregate</button>
-        <button className= {userClass+ " linker red " + svgName} onClick ={this.remove}>Remove poll</button>
+        <button className= {userClass+ " linker red " + svgName + " " + removeClass} onClick ={this.remove}>Remove poll</button>
         <button className= {"linker " + svgName} onClick ={this.vote}>Vote</button>
         <select id="optioner" ref= "selector" value= {this.state.voteValue} className = {"linker " + svgName} onChange ={this.handleChange}>
         {adder}
@@ -270,8 +275,9 @@ var Voter =  React.createClass({
         {this.state.arr.map((listValue, index)=>{
           var pollText = "linker middler";
           if (this.state.private && authorList[index]!== this.state.user){
-            pollText += " invisible"
+            pollText += " invisible";
           }
+          console.log (this.state.user);
           return <div>
                     <button className = {pollText} onClick ={()=> this.update(index)}>{listValue}</button>
                  </div>
