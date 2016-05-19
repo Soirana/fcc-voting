@@ -157,34 +157,45 @@ var Voter =  React.createClass({
   },
 
   vote: function(){
-      var voteUp = {name: null};
-      if (listas.length>0) {
-        var leng = listas.length
-        for (var i = 0; i < leng; i++) {
-          if (listas[i].name === this.state.voteValue){
-            listas[i].votes++;
-            voteUp["name"] =listas[i].name;
-            voteUp['poll']= linksList[this.state.ind];
-            break;
-          }
-        }
-        var checker = null;
-        if (i===leng){
-          checker = prompt("Please enter your option", listas[0].name);
-        }
-        if (checker) {
-          listas.push({name: checker, votes:1});
-          voteUp["name"] =checker
-          voteUp['poll']= linksList[this.state.ind];
-        }
-      if (voteUp.name !== null){
+    self = this;
+    $.get( "/votecheck", {user: self.state.user, poll: linksList[self.state.ind]})
+            .done(function( data ) {
+              if (data.voter) {
+                var voteUp = {name: null};
+                 if (listas.length>0) {
+                  var leng = listas.length
+                    for (var i = 0; i < leng; i++) {
+                      if (listas[i].name === self.state.voteValue){
+                          listas[i].votes++;
+                          voteUp["name"] =listas[i].name;
+                          voteUp['poll']= linksList[self.state.ind];
+                          break;
+                      }
+                    }
+                    var checker = null;
+                    if (i===leng){
+                      checker = prompt("Please enter your option", listas[0].name);
+                    }
+                    if (checker) {
+                    listas.push({name: checker, votes:1});
+                    voteUp["name"] =checker
+                    voteUp['poll']= linksList[this.state.ind];
+                    }
+                    if (voteUp.name !== null){
+                        $.get( "/vote", {old: voteUp, voter: self.state.user});
+                        self.setState({drawArray: listas});
+                        drawPeanut(listas);
+                    }       
+                }
+                return;
+
+             }else{
+                alert("You voted already...");
+              }
+
+            });
+
       
-      $.get( "/vote", voteUp);
-      this.setState({drawArray: listas});
-      drawPeanut(listas);
-      }       
-      }
-      return;
   },
   handleChange: function(e){
       this.setState({voteValue: e.target.value});

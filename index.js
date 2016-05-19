@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var Strategy = require('passport-twitter').Strategy;
 
+
 var app = express();
 
 passport.use(new Strategy({
@@ -38,6 +39,27 @@ var html = fs.readFileSync('peanuts/peanutpoll.html');
 
 app.use(express.static('peanuts'));
 app.set('port', (process.env.PORT || 5000));
+
+app.get('/votecheck', function(request, response) {
+	if ( request.xhr) {
+		var potvoter = request.query.user;
+		if (!potvoter){
+			response.json(voter: false);
+		} else {
+		db.find({label: request.query.poll},function(err, docs) {
+			if (doc[0].voters.indexOf(potvoter) !==-1){
+				response.json(voter: false);
+			}else{
+				response.json(voter: true);
+			}
+
+		});
+		}
+	}else {
+		response.redirect('/');
+	}
+
+});;
 
 app.get('/agregate', function(request, response) {
 	if ( request.xhr) {
