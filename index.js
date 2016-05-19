@@ -40,10 +40,6 @@ var html = fs.readFileSync('peanuts/peanutpoll.html');
 app.use(express.static('peanuts'));
 app.set('port', (process.env.PORT || 5000));
 
-db.update({author: 'soirana'}, { $set: {voters: []}});
-db.update({author: 'Soirana'}, { $set: {voters: []}});
-db.update({author: ""}, { $set: {voters: []}});
-
 app.get('/votecheck', function(request, response) {
 	if (request.xhr) {
 		var potvoter = request.query.user;
