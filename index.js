@@ -40,13 +40,19 @@ var html = fs.readFileSync('peanuts/peanutpoll.html');
 app.use(express.static('peanuts'));
 app.set('port', (process.env.PORT || 5000));
 
+db.update({author: 'soirana'}, { $set: {voters: []}});
+db.update({author: 'Soirana'}, { $set: {voters: []}});
+db.update({author: ""}, { $set: {voters: []}});
+
 app.get('/votecheck', function(request, response) {
 	if (request.xhr) {
 		var potvoter = request.query.user;
 		if (!potvoter){
 			response.json({voter: false});
 		} else {
+			console.log(request.query.poll, request.query)
 			db.find({label: request.query.poll},function(err, docs) {
+				
 				if (docs[0].voters.indexOf(potvoter) !==-1){
 					response.json({voter: false});
 				}else{
@@ -143,7 +149,7 @@ app.get('/remove', function(request, response) {
 app.get('/vote', function(request, response) {
 	if ( request.xhr) {
 		var holder = request.query.old;
-		db.find({label: request.query.poll},function(err, docs) {
+		db.find({label: request.query.old.poll},function(err, docs) {
 			var finder = docs[0].poll.slice();
 			
 			for (var i = 0; i< finder.length;i++){
