@@ -1,7 +1,13 @@
 {"author":"Soirana","label":"icecream","poll":[{"name":"vanille","votes":1},{"name":" chocolate","votes":3},{"name":" blueberries","votes":"0"}],"_id":"1GKuhevkUTUFzm7L","voters":[]}
 {"author":"Soirana","label":"favorite GoT character","poll":[{"name":"Sansa","votes":2},{"name":"Aria","votes":1},{"name":"Jaime","votes":3},{"name":"Cercei","votes":4},{"name":"Daenerys","votes":12},{"name":"Renley","votes":3},{"name":"Ashara","votes":1},{"name":"Tywin","votes":1},{"name":"Tyrion","votes":1},{"name":"Jeofrey","votes":1},{"name":"dragons","votes":20},{"name":"Blackfish","votes":1}],"_id":"JkFHc67fye9yYsya"}
 {"author":"Soirana","label":"screw heads","poll":[{"name":"COUNTERSUNK","votes":10},{"name":"Pozidriv","votes":1},{"name":"Round","votes":1}],"_id":"T69KomNFCMpuMqed"}
-{"author":"soirana","label":"shrubs","poll":[{"name":"dense","votes":4},{"name":" none","votes":1},{"name":" very dense","votes":"0"}],"_id":"Zig55adr7lhpkwjm"}
+{"author":"soirana","label":"shrubs","poll":[{"name":"dense","votes":4},{"name":" none","votes":1},{"name":" very dense","votes":"0"}],"_id":"Zig55adr7lhpkwjm","voters":[]}
 {"author":"soirana","label":"Boltons","poll":[{"name":"Roose","votes":2},{"name":" Ramsey","votes":"0"},{"name":" all dead","votes":3}],"_id":"bnbsTcaXd7TNnAIm"}
 {"author":"Soirana","label":"water","poll":[{"name":"red","votes":1},{"name":" blue","votes":"0"},{"name":" honey","votes":"0"}],"_id":"iyYF3x0eLQDWyET8"}
 {"author":"","label":"trees","poll":[{"name":"pine","votes":2},{"name":" ash","votes":1},{"name":" oak","votes":1}],"_id":"nFOEwNL6vjl3dTVq"}
+{"author":"Soirana","label":"favorite GoT character","poll":[{"name":"Sansa","votes":2},{"name":"Aria","votes":1},{"name":"Jaime","votes":3},{"name":"Cercei","votes":4},{"name":"Daenerys","votes":12},{"name":"Renley","votes":3},{"name":"Ashara","votes":1},{"name":"Tywin","votes":1},{"name":"Tyrion","votes":1},{"name":"Jeofrey","votes":1},{"name":"dragons","votes":20},{"name":"Blackfish","votes":1}],"_id":"JkFHc67fye9yYsya","voters":[]}
+{"author":"Soirana","label":"screw heads","poll":[{"name":"COUNTERSUNK","votes":10},{"name":"Pozidriv","votes":1},{"name":"Round","votes":1}],"_id":"T69KomNFCMpuMqed","voters":[]}
+{"author":"soirana","label":"shrubs","poll":[{"name":"dense","votes":4},{"name":" none","votes":1},{"name":" very dense","votes":"0"}],"_id":"Zig55adr7lhpkwjm","voters":[]}
+{"author":"soirana","label":"Boltons","poll":[{"name":"Roose","votes":2},{"name":" Ramsey","votes":"0"},{"name":" all dead","votes":3}],"_id":"bnbsTcaXd7TNnAIm","voters":[]}
+{"author":"Soirana","label":"water","poll":[{"name":"red","votes":1},{"name":" blue","votes":"0"},{"name":" honey","votes":"0"}],"_id":"iyYF3x0eLQDWyET8","voters":[]}
+{"author":"","label":"trees","poll":[{"name":"pine","votes":2},{"name":" ash","votes":1},{"name":" oak","votes":1}],"_id":"nFOEwNL6vjl3dTVq","voters":[]}
