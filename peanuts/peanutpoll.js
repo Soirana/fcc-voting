@@ -176,9 +176,9 @@ var Voter =  React.createClass({
                     if (i===leng){
                       checker = prompt("Please enter your option", listas[0].name);
                     }
+                    console.log (checker);
                     if (checker) {
-                    console.log(listas);
-                    listas.poll.push({name: checker, votes:1});
+                    listas.push({name: checker, votes:1});
                     voteUp["name"] =checker;
                     voteUp['poll']= linksList[this.state.ind];
                     }
