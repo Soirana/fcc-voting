@@ -1,0 +1,95 @@
+body{background: url("https://pixabay.com/static/uploads/photo/2015/10/22/15/59/magnifying-glass-1001506__180.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+
+svg{
+	margin-left: 2%;
+	background-color: rgba(255, 227, 235, 0.7);
+
+}
+p{	font-size: 2.3vw;
+	background-color: rgba(0,0,0,0.5);
+	color: purple;
+	width: 50vw;
+	margin-left: 25vw;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: purple;
+	
+}
+.wrap{
+	display: inline-flex;
+}
+
+.sponge{
+	
+
+}
+.linker{
+	background-color: Aquamarine;
+	margin-top: 1%;
+	text-align: center;
+	cursor: pointer;
+	float: none;
+	width: 100%;
+}
+.middler{
+	background-color: GreenYellow;
+}
+.long{
+	width: 100vw;
+	min-width: 300px;
+}
+.short{
+	width: 40vw;
+	min-width: 300px;
+}
+.invisible{
+	display: none;
+}
+
+  .legend {
+    font-size: 12px;
+  }
+  rect {
+    stroke-width: 2;
+  }
+
+ 
+
+.tooltip {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    pointer-events: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+#optioner{
+	background-color: white;
+}
+
+	
+
+h3{
+	width: 50vw;
+	margin-left: 25vw;
+	font-size: 4.5vw;
+	text-align: center;
+	background-color: rgba(0,0,0,0.5);
+	color: purple;
+	
+}
+.white{
+	background-color: white;
+}
+.red{
+	background-color: red;
+}
