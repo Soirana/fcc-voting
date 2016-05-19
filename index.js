@@ -46,13 +46,12 @@ app.get('/votecheck', function(request, response) {
 		if (!potvoter){
 			response.json({voter: false});
 		} else {
-			console.log(request.query.poll, request.query)
 			db.find({label: request.query.poll},function(err, docs) {
 				
-				if (docs[0].voters.indexOf(potvoter) !==-1){
-					response.json({voter: false});
-				}else{
+				if (docs[0].voters.indexOf(potvoter) ===-1){
 					response.json({voter: true});
+				}else{
+					response.json({voter: false});
 				}
 
 			});
