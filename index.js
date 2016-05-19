@@ -8,8 +8,8 @@ var Strategy = require('passport-twitter').Strategy;
 var app = express();
 
 passport.use(new Strategy({
-    consumerKey: ENV['twitterkey'],
-    consumerSecret: ENV['twittersecret'],
+    consumerKey: process.env.IP['twitterkey'],
+    consumerSecret: process.env.IP['twittersecret'],
     callbackURL: 'https://soirana-peanuts.herokuapp.com/twitter/return'
   },
   function(token, tokenSecret, profile, cb) {
