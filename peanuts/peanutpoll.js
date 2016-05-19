@@ -294,7 +294,7 @@ var Voter =  React.createClass({
         <p>
           This "fcc-voting" app was built by <a href="https://www.freecodecamp.com/soirana">Soirana</a><br/>
         for the <a href="https://www.freecodecamp.com/challenges/build-a-voting-app">Free Code Camp task</a><br/>
-        <a href = "">Github repository</a>
+        <a href = "https://github.com/Soirana/fcc-voting">Github repository</a>
         </p>
         </div>
         )
