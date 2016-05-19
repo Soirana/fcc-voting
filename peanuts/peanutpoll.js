@@ -174,7 +174,7 @@ var Voter =  React.createClass({
                     }
                     var checker = null;
                     if (i===leng){
-                      checker = prompt("Please enter your option", listas[0].name);
+                      checker = prompt("Please enter your option", listas[0].name.split("").reverse().join(""));
                      }
                     if (checker) {
                      for (var i = 0; i < leng; i++) {
